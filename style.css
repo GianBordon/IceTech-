@@ -150,6 +150,18 @@
     font-size: 40px;
 }
 
+.cantidad-carrito{
+    background-color: #950952;
+    color: #ffeded;
+    border-radius: 40%;
+    font-size: 20px;
+    padding: 4px;
+    top: 37px;
+    right: 14px;
+    position: absolute;
+    display: none;
+}
+
 @media (max-width: 720px){
     
     .banner h1{

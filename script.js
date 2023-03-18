@@ -2,8 +2,9 @@
 // creo las const que voy a usar en mi pagina para que se vean en el index
 
 const iceContent = document.getElementById("ice-content");
-const verCarrito = document.getElementById("verCarrito")
-const modalContent = document.getElementById("modal-content")
+const verCarrito = document.getElementById("verCarrito");
+const modalContent = document.getElementById("modal-content");
+const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 // carrito con el localstoraje para que se guarde y no se pierda los productos del carrito
 
@@ -52,6 +53,7 @@ const getProducts = async() => {
                 cantidad: product.cantidad,
             });
             console.table(carrito);
+            carritoCounter();
             saveLocal();
         }   
         });
@@ -139,8 +141,14 @@ const getProducts = async() => {
         carrito = carrito.filter((carritoId) => {
             return carritoId !== foundId; 
         });
+        carritoCounter();
         pintarCarrito ();
         saveLocal();
+    }
+
+    const carritoCounter = () => {
+        cantidadCarrito.style.display = "block";
+        cantidadCarrito.innerText = carrito.length;
     }
 
 };
